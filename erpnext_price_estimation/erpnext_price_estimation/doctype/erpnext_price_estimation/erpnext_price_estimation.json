@@ -9,9 +9,12 @@
   "posting_date",
   "customer",
   "customer_name",
+  "opportunity_from",
   "column_break_28_column",
+  "company",
   "domain",
   "status",
+  "party",
   "introduction_section_section",
   "introduction",
   "customer_details",
@@ -124,8 +127,7 @@
   {
    "fieldname": "project_and_account_brief",
    "fieldtype": "Text Editor",
-   "label": "Project and Account Brief",
-   "reqd": 1
+   "label": "Project and Account Brief"
   },
   {
    "depends_on": "eval:doc.lead_qualification",
@@ -583,10 +585,28 @@
    "fieldtype": "Table",
    "label": "Estimation Details",
    "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "opportunity_from",
+   "fieldtype": "Link",
+   "label": "Opportunity From",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "label": "Party",
+   "options": "opportunity_from"
   }
  ],
  "links": [],
- "modified": "2024-06-12 15:49:25.244037",
+ "modified": "2024-07-20 13:44:05.260736",
  "modified_by": "Administrator",
  "module": "ERPNext Price Estimation",
  "name": "ERPNext Price Estimation",

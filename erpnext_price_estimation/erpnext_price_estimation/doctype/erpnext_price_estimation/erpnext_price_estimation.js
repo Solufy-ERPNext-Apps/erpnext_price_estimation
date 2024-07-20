@@ -165,6 +165,14 @@ frappe.ui.form.on('ERPNext Price Estimation', {
             });
         });
 
+        frm.set_query("opportunity_from", function () {
+			return {
+				filters: {
+					name: ["in", ["Customer", "Lead", "Prospect"]],
+				},
+			};
+		});
+
         frm.doc.total_efforts = frm.doc.total_config_effort + frm.doc.total_other_effort + frm.doc.total_customization_effort;
         frm.refresh_field('total_config_effort');
         frm.refresh_field('total_other_effort');
@@ -188,7 +196,7 @@ modules.forEach((module) => {
     estimation_details_object[module + "_remove"] = function(frm, cdt, cdn) {
         frm.events.calculate_totals(frm);
     }
-}); 
+});
 
 frappe.ui.form.on('Estimation Detail', estimation_details_object);
 
