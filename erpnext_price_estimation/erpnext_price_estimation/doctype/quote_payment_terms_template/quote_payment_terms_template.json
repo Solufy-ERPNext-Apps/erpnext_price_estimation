@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:payment_term",
+ "creation": "2025-02-10 13:32:54.366311",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_term",
+  "implementation_item",
+  "description",
+  "invoice_portion",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "payment_term",
+   "fieldtype": "Link",
+   "label": "Payment Term",
+   "options": "Payment Term",
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "implementation_item",
+   "fieldtype": "Check",
+   "label": "Implementation Item"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "invoice_portion",
+   "fieldtype": "Percent",
+   "label": "Invoice Portion"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-10 13:47:42.468697",
+ "modified_by": "Administrator",
+ "module": "ERPNext Price Estimation",
+ "name": "Quote Payment Terms Template",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

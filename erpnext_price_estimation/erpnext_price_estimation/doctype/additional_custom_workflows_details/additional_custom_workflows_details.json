@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-10 12:19:33.620718",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "workflow",
+  "criteria",
+  "hours",
+  "parameters"
+ ],
+ "fields": [
+  {
+   "fieldname": "workflow",
+   "fieldtype": "Data",
+   "label": "Workflow"
+  },
+  {
+   "fieldname": "criteria",
+   "fieldtype": "Small Text",
+   "label": "Criteria"
+  },
+  {
+   "fieldname": "hours",
+   "fieldtype": "Data",
+   "label": "Hours"
+  },
+  {
+   "fieldname": "parameters",
+   "fieldtype": "Small Text",
+   "label": "Parameters"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-10 12:19:33.620718",
+ "modified_by": "Administrator",
+ "module": "ERPNext Price Estimation",
+ "name": "Additional Custom Workflows Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

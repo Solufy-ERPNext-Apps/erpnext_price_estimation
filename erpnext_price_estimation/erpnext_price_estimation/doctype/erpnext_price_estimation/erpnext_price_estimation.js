@@ -244,3 +244,131 @@ function update_amc_amount(frm) {
     frm.set_value('amc_amount', total);
     frm.refresh_field('amc_amount');
 }
+
+
+frappe.ui.form.on('ERPNext Price Estimation', {
+    onload: function (frm) {
+        setTemplateQuery(frm, 'introduction_template', { 'introduction': 1 });
+        setTemplateQuery(frm, 'executive_summary_template', { 'executive_summary': 1 });
+        setTemplateQuery(frm, 'module_implementation_template', { 'module_implement': 1 });
+        setTemplateQuery(frm, 'client_need_template', { 'client_needs': 1 });
+        setTemplateQuery(frm, 'customer_prerequisites_template', { 'customer_prerequisites': 1 })
+        setTemplateQuery(frm, 'delivery_terms_template', { 'delevery_terms': 1 })
+    },
+
+    introduction_template: function (frm) {
+        setTemplateValue(frm, 'introduction_template', 'introduction');
+    },
+
+    executive_summary_template: function (frm) {
+        setTemplateValue(frm, 'executive_summary_template', 'executive_summary');
+    },
+
+    module_implementation_template: function (frm) {
+        setTemplateValue(frm, 'module_implementation_template', 'module_implementation_and_objectives');
+    },
+
+    client_need_template: function (frm) {
+        setTemplateValue(frm, 'client_need_template', 'client_need');
+    }
+
+});
+
+function setTemplateQuery(frm, fieldname, filters) {
+    frm.set_query(fieldname, function () {
+        return { filters: filters };
+    });
+}
+
+function setTemplateValue(frm, linkField, targetField) {
+    if (frm.doc[linkField]) {
+        frappe.call({
+            method: 'frappe.client.get',
+            args: {
+                doctype: 'Quote Template',
+                name: frm.doc[linkField]
+            },
+            callback: function (response) {
+                if (response.message) {
+                    frm.set_value(targetField, response.message.terms);
+                }
+            }
+        });
+    }
+}
+
+frappe.ui.form.on('ERPNext Price Estimation', {
+    validate: function (frm) {
+        calculate_total_implementation_charges(frm);
+    },
+
+    'implementation_charges_add': function (frm) {
+        calculate_total_implementation_charges(frm);
+    },
+    'implementation_charges_remove': function (frm) {
+        calculate_total_implementation_charges(frm);
+    }
+});
+
+function calculate_total_implementation_charges(frm) {
+    let total = 0;
+
+    frm.doc.implementation_charges.forEach(row => {
+        total += flt(row.amount);
+    });
+
+    frm.set_value('total_implementation_charges', total);
+};
+
+
+
+// frappe.ui.form.on('ERPNext Price Estimation', {
+//     refresh: function (frm) {
+//         frappe.call({
+//             method: 'erpnext_price_estimation.erpnext_price_estimation.doctype.estimation_document.estimation_document.get_child_table_Data',
+//             args: {
+//                 docname: frm.doc.estimation_document
+//             },
+//             callback: function (r) {
+//                 if (r.message) {
+//                     frm.clear_table('master_document');
+//                     r.message.forEach(data => {
+//                         const row = frm.add_child('master_document');
+//                         row.document = data.document;
+                        
+//                     });
+//                     frm.refresh_field('master_document');
+//                 }
+//             }
+//         });
+//     }
+// });
+
+// frappe.ui.form.on('New ERPNext Price Estimation', {
+//     refresh: function (frm) {
+//         if (frm.doc.master_document) {  // Assume this is the link to Estimation Detail
+//             frappe.call({
+//                 method: "frappe.client.get",
+//                 args: {
+//                     doctype: "Estimation Detail",
+//                     name: frm.doc.master_document
+//                 },
+//                 callback: function (response) {
+//                     if (response.message) {
+//                         const estimationDetailData = response.message.master_document || [];
+                        
+//                         frm.clear_table('master_document');
+//                         estimationDetailData.forEach(row => {
+//                             const newRow = frm.add_child('master_document');
+//                             Object.assign(newRow, row); // Assign all row data
+//                         });
+//                         frm.refresh_field('master_document');
+//                     }
+//                 }
+//             });
+//         }
+//     }
+// });
+
+
+

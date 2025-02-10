@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-10 12:19:26.190785",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reports",
+  "criteria",
+  "hours",
+  "parameters"
+ ],
+ "fields": [
+  {
+   "fieldname": "reports",
+   "fieldtype": "Data",
+   "label": "Reports"
+  },
+  {
+   "fieldname": "criteria",
+   "fieldtype": "Small Text",
+   "label": "Criteria"
+  },
+  {
+   "fieldname": "hours",
+   "fieldtype": "Data",
+   "label": "Hours"
+  },
+  {
+   "fieldname": "parameters",
+   "fieldtype": "Small Text",
+   "label": "Parameters"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-10 12:19:26.190785",
+ "modified_by": "Administrator",
+ "module": "ERPNext Price Estimation",
+ "name": "Additional Script Reports Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

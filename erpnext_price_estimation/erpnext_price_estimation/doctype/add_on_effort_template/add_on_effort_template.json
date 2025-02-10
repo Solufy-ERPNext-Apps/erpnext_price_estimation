@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-10 12:37:24.031548",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "additional_script_reports",
+  "additional_custom_print_formats",
+  "additional_integrations",
+  "additional_custom_workflows",
+  "additional_custom_notifications",
+  "additional_script_reports_details",
+  "additional_custom_print_formats_details",
+  "additional_integrations_details",
+  "additional_custom_workflows_details",
+  "additional_custom_notifications_details"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "additional_script_reports",
+   "fieldtype": "Check",
+   "label": "Additional Script Reports"
+  },
+  {
+   "default": "0",
+   "fieldname": "additional_custom_print_formats",
+   "fieldtype": "Check",
+   "label": "Additional Custom Print Formats"
+  },
+  {
+   "default": "0",
+   "fieldname": "additional_integrations",
+   "fieldtype": "Check",
+   "label": "Additional Integrations"
+  },
+  {
+   "default": "0",
+   "fieldname": "additional_custom_workflows",
+   "fieldtype": "Check",
+   "label": "Additional Custom Workflows"
+  },
+  {
+   "default": "0",
+   "fieldname": "additional_custom_notifications",
+   "fieldtype": "Check",
+   "label": "Additional Custom Notifications"
+  },
+  {
+   "fieldname": "additional_script_reports_details",
+   "fieldtype": "Table",
+   "label": "Additional Script Reports Details",
+   "options": "Additional Script Reports Details"
+  },
+  {
+   "fieldname": "additional_custom_print_formats_details",
+   "fieldtype": "Table",
+   "label": "Additional Custom Print Formats Details",
+   "options": "Additional Custom Print Formats Details"
+  },
+  {
+   "fieldname": "additional_integrations_details",
+   "fieldtype": "Table",
+   "label": "Additional Integrations Details",
+   "options": "Additional Integrations Details"
+  },
+  {
+   "fieldname": "additional_custom_workflows_details",
+   "fieldtype": "Table",
+   "label": "Additional Custom Workflows Details",
+   "options": "Additional Custom Workflows Details"
+  },
+  {
+   "fieldname": "additional_custom_notifications_details",
+   "fieldtype": "Table",
+   "label": "Additional Custom Notifications Details",
+   "options": "Additional Custom Notifications Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-10 12:37:24.031548",
+ "modified_by": "Administrator",
+ "module": "ERPNext Price Estimation",
+ "name": "Add On Effort Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

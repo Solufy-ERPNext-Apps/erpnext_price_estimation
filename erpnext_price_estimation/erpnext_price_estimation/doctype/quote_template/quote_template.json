@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-10 10:26:01.369367",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "template_type_section",
+  "introduction",
+  "executive_summary",
+  "erp_support_service_benifits",
+  "cloud_server_benifits",
+  "column_break_wrvr",
+  "module_implement",
+  "client_needs",
+  "customer_prerequisites",
+  "delevery_terms",
+  "column_break_krsc",
+  "general_terms",
+  "agreement",
+  "core_values",
+  "section_break_fmbi",
+  "terms"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_type_section",
+   "fieldtype": "Section Break",
+   "label": "Template Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "introduction",
+   "fieldtype": "Check",
+   "label": "Introduction"
+  },
+  {
+   "default": "0",
+   "fieldname": "executive_summary",
+   "fieldtype": "Check",
+   "label": "Executive Summary"
+  },
+  {
+   "default": "0",
+   "fieldname": "erp_support_service_benifits",
+   "fieldtype": "Check",
+   "label": "Erp Support Service Benifits"
+  },
+  {
+   "default": "0",
+   "fieldname": "cloud_server_benifits",
+   "fieldtype": "Check",
+   "label": "Cloud Server Benifits"
+  },
+  {
+   "fieldname": "column_break_wrvr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "module_implement",
+   "fieldtype": "Check",
+   "label": "Module Implement"
+  },
+  {
+   "default": "0",
+   "fieldname": "client_needs",
+   "fieldtype": "Check",
+   "label": "Client Needs"
+  },
+  {
+   "default": "0",
+   "fieldname": "customer_prerequisites",
+   "fieldtype": "Check",
+   "label": "Customer Prerequisites"
+  },
+  {
+   "default": "0",
+   "fieldname": "delevery_terms",
+   "fieldtype": "Check",
+   "label": "Delevery Terms"
+  },
+  {
+   "fieldname": "column_break_krsc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "general_terms",
+   "fieldtype": "Check",
+   "label": "General Terms"
+  },
+  {
+   "default": "0",
+   "fieldname": "agreement",
+   "fieldtype": "Check",
+   "label": "Agreement"
+  },
+  {
+   "default": "0",
+   "fieldname": "core_values",
+   "fieldtype": "Check",
+   "label": "Core Values"
+  },
+  {
+   "fieldname": "section_break_fmbi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "terms",
+   "fieldtype": "Text Editor",
+   "label": "Terms"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-10 10:26:01.369367",
+ "modified_by": "Administrator",
+ "module": "ERPNext Price Estimation",
+ "name": "Quote Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
