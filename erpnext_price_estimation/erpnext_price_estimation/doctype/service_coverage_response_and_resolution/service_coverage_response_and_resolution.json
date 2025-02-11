@@ -1,0 +1,36 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-11 12:29:42.776223",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "severity",
+  "response_and_resolution_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "severity",
+   "fieldtype": "Data",
+   "label": "Severity"
+  },
+  {
+   "fieldname": "response_and_resolution_time",
+   "fieldtype": "Small Text",
+   "label": "Response and Resolution Time"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-11 15:23:02.800510",
+ "modified_by": "Administrator",
+ "module": "ERPNext Price Estimation",
+ "name": "Service Coverage Response and Resolution",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

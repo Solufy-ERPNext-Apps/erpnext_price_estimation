@@ -254,6 +254,11 @@ frappe.ui.form.on('ERPNext Price Estimation', {
         setTemplateQuery(frm, 'client_need_template', { 'client_needs': 1 });
         setTemplateQuery(frm, 'customer_prerequisites_template', { 'customer_prerequisites': 1 })
         setTemplateQuery(frm, 'delivery_terms_template', { 'delevery_terms': 1 })
+        setTemplateQuery(frm, 'general_terms_template', { 'general_terms': 1 });
+        setTemplateQuery(frm, 'agreement_template', { 'agreement': 1 });
+        setTemplateQuery(frm, 'core_values_template', { 'core_values': 1 })
+        setTemplateQuery(frm, 'cloud_server_benifits_template', { 'cloud_server_benifits': 1 })
+        
     },
 
     introduction_template: function (frm) {
@@ -270,6 +275,22 @@ frappe.ui.form.on('ERPNext Price Estimation', {
 
     client_need_template: function (frm) {
         setTemplateValue(frm, 'client_need_template', 'client_need');
+    },
+
+    general_terms_template: function (frm) {
+        setTemplateValue(frm, 'general_terms_template', 'general_terms');
+    },
+
+    agreement_template: function (frm) {
+        setTemplateValue(frm, 'agreement_template', 'agreement');
+    },
+
+    core_values_template: function (frm) {
+        setTemplateValue(frm, 'core_values_template', 'core_values');
+    },
+
+    cloud_server_benifits_template: function (frm) {
+        setTemplateValue(frm, 'cloud_server_benifits_template', 'cloud_server_benifits');
     }
 
 });

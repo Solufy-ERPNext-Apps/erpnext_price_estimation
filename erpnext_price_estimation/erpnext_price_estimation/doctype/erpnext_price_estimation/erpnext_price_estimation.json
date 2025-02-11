@@ -1,910 +1,1018 @@
 {
-    "actions": [],
-    "autoname": "PRM-EST-.#####",
-    "creation": "2024-05-14 12:48:08.989509",
-    "doctype": "DocType",
-    "editable_grid": 1,
-    "engine": "InnoDB",
-    "field_order": [
-     "posting_date",
-     "customer",
-     "customer_name",
-     "opportunity_from",
-     "customer_company",
-     "company_location",
-     "validity_ds",
-     "column_break_28_column",
-     "company",
-     "domain",
-     "status",
-     "party",
-     "revison_no",
-     "revision_date",
-     "prepared_by",
-     "introduction_section_section",
-     "introduction_template",
-     "introduction",
-     "executive_summary_section",
-     "executive_summary_template",
-     "executive_summary",
-     "module_implementation_section",
-     "module_implementation_template",
-     "module_implementation_and_objectives",
-     "customer_details",
-     "project_and_account_brief",
-     "qualification_details_section",
-     "current_state",
-     "pain_point",
-     "column_break_qual",
-     "impact",
-     "discovery_details_section",
-     "discovery_call_notes",
-     "pick_modules_section",
-     "accounts",
-     "payroll",
-     "manufacturing",
-     "education",
-     "column_break_8",
-     "buying",
-     "selling",
-     "setup",
-     "column_break_10",
-     "stock",
-     "hrms",
-     "customization",
-     "column_break_12",
-     "crm",
-     "projects",
-     "healthcare",
-     "accounts_module_section",
-     "accounts_details",
-     "master_document",
-     "report_document",
-     "buying_section",
-     "buying_details",
-     "stock_section",
-     "stock_details",
-     "crm_section",
-     "crm_details",
-     "payroll_section",
-     "payroll_details",
-     "selling_section",
-     "selling_details",
-     "hrms_section",
-     "hrms_details",
-     "projects_section",
-     "projects_details",
-     "manufacturing_section_section",
-     "manufacturing_details",
-     "setup_section_section",
-     "setup_details",
-     "customizations_section",
-     "customization_details",
-     "healthcare_section",
-     "healthcare_details",
-     "education_section",
-     "education_details",
-     "total_hours_section",
-     "currency",
-     "total_config_effort",
-     "total_hourly_rate",
-     "column_break_25",
-     "total_other_effort",
-     "total_efforts",
-     "total_amount",
-     "frappe_cloud_details",
-     "frappe_cloud_plan",
-     "column_break_26",
-     "validity",
-     "rate",
-     "column_break_27",
-     "uom",
-     "amount",
-     "column_break_evdn",
-     "ram",
-     "cpu",
-     "ssd_storage",
-     "provider",
-     "amc_details",
-     "amc",
-     "column_break_28",
-     "amc_validity",
-     "amc_rate",
-     "column_break_29",
-     "amc_uom",
-     "amc_amount",
-     "no_of_users",
-     "implementation_charges_section",
-     "implementation_charges",
-     "total_implementation_charges",
-     "techinical_support_and_customization_section",
-     "technical_support_and_customization",
-     "validity_tsc",
-     "rate_per_hour",
-     "client_specific_needs_section",
-     "client_need_template",
-     "client_need",
-     "add_on_efforts_section",
-     "additional_template",
-     "additional",
-     "quote_payment_terms_template_section",
-     "quote_payment_terms_template",
-     "customer_prerequisites_template_section",
-     "customer_prerequisites_template",
-     "delivery_terms_template_section",
-     "delivery_terms_template",
-     "thanks_section_section",
-     "thanks"
-    ],
-    "fields": [
-     {
-      "fieldname": "column_break_28_column",
-      "fieldtype": "Column Break"
-     },
-     {
-      "fieldname": "domain",
-      "fieldtype": "Select",
-      "in_list_view": 1,
-      "in_standard_filter": 1,
-      "label": "Domain",
-      "options": "Manufacturing\nServices\nDistribution\nHealthcare\nEducation\nRetail"
-     },
-     {
-      "default": "Open",
-      "fieldname": "status",
-      "fieldtype": "Select",
-      "in_list_view": 1,
-      "in_standard_filter": 1,
-      "label": "Status",
-      "options": "Open\nEstimated\nConverted\nHanded Over\nLost\nCancelled",
-      "reqd": 1
-     },
-     {
-      "fieldname": "customer_details",
-      "fieldtype": "Section Break",
-      "label": "Company Details"
-     },
-     {
-      "fieldname": "project_and_account_brief",
-      "fieldtype": "Text Editor",
-      "label": "Project and Account Brief"
-     },
-     {
-      "depends_on": "eval:doc.lead_qualification",
-      "fieldname": "qualification_details_section",
-      "fieldtype": "Section Break",
-      "label": "Qualification Details"
-     },
-     {
-      "fetch_from": "lead_qualification.current_state",
-      "fieldname": "current_state",
-      "fieldtype": "Text",
-      "label": "Current State",
-      "read_only": 1
-     },
-     {
-      "fetch_from": "lead_qualification.pain_point",
-      "fieldname": "pain_point",
-      "fieldtype": "Text",
-      "label": "Pain Point",
-      "read_only": 1
-     },
-     {
-      "fieldname": "column_break_qual",
-      "fieldtype": "Column Break"
-     },
-     {
-      "fetch_from": "lead_qualification.impact",
-      "fetch_if_empty": 1,
-      "fieldname": "impact",
-      "fieldtype": "Text",
-      "label": "Impact",
-      "read_only": 1
-     },
-     {
-      "depends_on": "eval:doc.lead_qualification",
-      "fieldname": "discovery_details_section",
-      "fieldtype": "Section Break",
-      "label": "Discovery Details"
-     },
-     {
-      "fetch_from": "lead_qualification.discovery_call_notes",
-      "fieldname": "discovery_call_notes",
-      "fieldtype": "Text Editor",
-      "label": "Discovery Call Notes",
-      "read_only": 1
-     },
-     {
-      "fieldname": "pick_modules_section",
-      "fieldtype": "Section Break",
-      "label": "Pick Modules"
-     },
-     {
-      "default": "0",
-      "fieldname": "accounts",
-      "fieldtype": "Check",
-      "label": "Accounts"
-     },
-     {
-      "default": "0",
-      "fieldname": "payroll",
-      "fieldtype": "Check",
-      "label": "Payroll"
-     },
-     {
-      "default": "0",
-      "fieldname": "manufacturing",
-      "fieldtype": "Check",
-      "label": "Manufacturing"
-     },
-     {
-      "fieldname": "column_break_8",
-      "fieldtype": "Column Break"
-     },
-     {
-      "default": "0",
-      "fieldname": "buying",
-      "fieldtype": "Check",
-      "label": "Buying"
-     },
-     {
-      "default": "0",
-      "fieldname": "selling",
-      "fieldtype": "Check",
-      "label": "Selling"
-     },
-     {
-      "default": "0",
-      "fieldname": "setup",
-      "fieldtype": "Check",
-      "label": "Setup"
-     },
-     {
-      "fieldname": "column_break_10",
-      "fieldtype": "Column Break"
-     },
-     {
-      "default": "0",
-      "fieldname": "stock",
-      "fieldtype": "Check",
-      "label": "Stock"
-     },
-     {
-      "default": "0",
-      "fieldname": "hrms",
-      "fieldtype": "Check",
-      "label": "HRMS"
-     },
-     {
-      "default": "0",
-      "fieldname": "customization",
-      "fieldtype": "Check",
-      "label": "Customization"
-     },
-     {
-      "fieldname": "column_break_12",
-      "fieldtype": "Column Break",
-      "hide_border": 1
-     },
-     {
-      "default": "0",
-      "fieldname": "crm",
-      "fieldtype": "Check",
-      "label": "CRM"
-     },
-     {
-      "default": "0",
-      "fieldname": "projects",
-      "fieldtype": "Check",
-      "label": "Projects"
-     },
-     {
-      "depends_on": "eval:doc.accounts",
-      "fieldname": "accounts_module_section",
-      "fieldtype": "Section Break",
-      "label": "Accounts"
-     },
-     {
-      "depends_on": "eval:doc.buying",
-      "fieldname": "buying_section",
-      "fieldtype": "Section Break",
-      "label": "Buying"
-     },
-     {
-      "depends_on": "eval:doc.stock",
-      "fieldname": "stock_section",
-      "fieldtype": "Section Break",
-      "label": "Stock"
-     },
-     {
-      "depends_on": "eval:doc.crm",
-      "fieldname": "crm_section",
-      "fieldtype": "Section Break",
-      "label": "CRM"
-     },
-     {
-      "depends_on": "eval:doc.payroll",
-      "fieldname": "payroll_section",
-      "fieldtype": "Section Break",
-      "label": "Payroll"
-     },
-     {
-      "depends_on": "eval:doc.selling",
-      "fieldname": "selling_section",
-      "fieldtype": "Section Break",
-      "label": "Selling"
-     },
-     {
-      "depends_on": "eval:doc.hrms",
-      "fieldname": "hrms_section",
-      "fieldtype": "Section Break",
-      "label": "HRMS"
-     },
-     {
-      "depends_on": "eval:doc.projects",
-      "fieldname": "projects_section",
-      "fieldtype": "Section Break",
-      "label": "Projects"
-     },
-     {
-      "depends_on": "eval:doc.manufacturing",
-      "fieldname": "manufacturing_section_section",
-      "fieldtype": "Section Break",
-      "label": "Manufacturing Section"
-     },
-     {
-      "depends_on": "eval:doc.setup",
-      "fieldname": "setup_section_section",
-      "fieldtype": "Section Break",
-      "label": "Setup Section"
-     },
-     {
-      "depends_on": "eval:doc.customization",
-      "fieldname": "customizations_section",
-      "fieldtype": "Section Break",
-      "label": "Customizations"
-     },
-     {
-      "fieldname": "total_hours_section",
-      "fieldtype": "Section Break",
-      "label": "Total Implementation Hours"
-     },
-     {
-      "fieldname": "total_config_effort",
-      "fieldtype": "Float",
-      "label": "Total Configuration Efforts"
-     },
-     {
-      "fieldname": "column_break_25",
-      "fieldtype": "Column Break"
-     },
-     {
-      "fieldname": "total_other_effort",
-      "fieldtype": "Float",
-      "label": "Total Other Efforts"
-     },
-     {
-      "fieldname": "total_efforts",
-      "fieldtype": "Float",
-      "label": "Total Efforts"
-     },
-     {
-      "fetch_from": "partner_lead.lead_name",
-      "fieldname": "customer",
-      "fieldtype": "Link",
-      "label": "Customer",
-      "options": "Customer"
-     },
-     {
-      "fetch_from": "customer.customer_name",
-      "fieldname": "customer_name",
-      "fieldtype": "Data",
-      "label": "Customer Name"
-     },
-     {
-      "default": "0",
-      "fieldname": "healthcare",
-      "fieldtype": "Check",
-      "label": "Healthcare"
-     },
-     {
-      "default": "0",
-      "fieldname": "education",
-      "fieldtype": "Check",
-      "label": "Education"
-     },
-     {
-      "depends_on": "eval:doc.healthcare",
-      "fieldname": "healthcare_section",
-      "fieldtype": "Section Break",
-      "label": "Healthcare"
-     },
-     {
-      "depends_on": "eval:doc.education",
-      "fieldname": "education_section",
-      "fieldtype": "Section Break",
-      "label": "Education"
-     },
-     {
-      "fieldname": "total_hourly_rate",
-      "fieldtype": "Float",
-      "label": "Total Hourly Rate"
-     },
-     {
-      "fieldname": "total_amount",
-      "fieldtype": "Currency",
-      "label": "Total Amount",
-      "options": "currency"
-     },
-     {
-      "default": "Today",
-      "fieldname": "posting_date",
-      "fieldtype": "Date",
-      "label": "Posting Date"
-     },
-     {
-      "fieldname": "frappe_cloud_details",
-      "fieldtype": "Section Break",
-      "label": "Frappe Cloud Details"
-     },
-     {
-      "fieldname": "amc_details",
-      "fieldtype": "Section Break",
-      "label": "AMC Details"
-     },
-     {
-      "fieldname": "frappe_cloud_plan",
-      "fieldtype": "Small Text",
-      "label": "Frappe Cloud Plan"
-     },
-     {
-      "fieldname": "rate",
-      "fieldtype": "Currency",
-      "label": "Rate"
-     },
-     {
-      "fieldname": "validity",
-      "fieldtype": "Float",
-      "label": "Validity"
-     },
-     {
-      "fieldname": "uom",
-      "fieldtype": "Select",
-      "label": "UOM",
-      "options": "Month\nYear"
-     },
-     {
-      "fieldname": "amount",
-      "fieldtype": "Currency",
-      "label": "Amount",
-      "options": "currency"
-     },
-     {
-      "fieldname": "column_break_26",
-      "fieldtype": "Column Break"
-     },
-     {
-      "fieldname": "column_break_27",
-      "fieldtype": "Column Break"
-     },
-     {
-      "default": "AMC",
-      "fieldname": "amc",
-      "fieldtype": "Small Text",
-      "label": "AMC"
-     },
-     {
-      "fieldname": "amc_validity",
-      "fieldtype": "Float",
-      "label": "Validity"
-     },
-     {
-      "fieldname": "amc_rate",
-      "fieldtype": "Currency",
-      "label": "Rate",
-      "options": "currency"
-     },
-     {
-      "fieldname": "amc_uom",
-      "fieldtype": "Select",
-      "label": "UOM",
-      "options": "Month\nYear"
-     },
-     {
-      "fieldname": "amc_amount",
-      "fieldtype": "Currency",
-      "label": "Amount",
-      "options": "currency"
-     },
-     {
-      "fieldname": "column_break_28",
-      "fieldtype": "Column Break"
-     },
-     {
-      "fieldname": "column_break_29",
-      "fieldtype": "Column Break"
-     },
-     {
-      "fieldname": "currency",
-      "fieldtype": "Link",
-      "label": "Currency",
-      "options": "Currency"
-     },
-     {
-      "fieldname": "introduction",
-      "fieldtype": "Text Editor",
-      "label": "Introduction Section"
-     },
-     {
-      "fieldname": "introduction_section_section",
-      "fieldtype": "Section Break"
-     },
-     {
-      "fieldname": "thanks_section_section",
-      "fieldtype": "Section Break"
-     },
-     {
-      "fieldname": "thanks",
-      "fieldtype": "Text Editor",
-      "label": "End Section"
-     },
-     {
-      "fieldname": "accounts_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "buying_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "stock_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "crm_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "payroll_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "selling_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "hrms_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "projects_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "manufacturing_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "setup_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "healthcare_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "education_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "customization_details",
-      "fieldtype": "Table",
-      "label": "Estimation Details",
-      "options": "Estimation Detail"
-     },
-     {
-      "fieldname": "company",
-      "fieldtype": "Link",
-      "label": "Company",
-      "options": "Company"
-     },
-     {
-      "fieldname": "opportunity_from",
-      "fieldtype": "Link",
-      "label": "Opportunity From",
-      "options": "DocType"
-     },
-     {
-      "fieldname": "party",
-      "fieldtype": "Dynamic Link",
-      "label": "Party",
-      "options": "opportunity_from"
-     },
-     {
-      "fieldname": "customer_company",
-      "fieldtype": "Data",
-      "label": "Customer Company"
-     },
-     {
-      "fieldname": "company_location",
-      "fieldtype": "Data",
-      "label": "Company Location"
-     },
-     {
-      "fieldname": "validity_ds",
-      "fieldtype": "Int",
-      "label": "Validity"
-     },
-     {
-      "fieldname": "revison_no",
-      "fieldtype": "Data",
-      "label": "Revison No."
-     },
-     {
-      "fieldname": "revision_date",
-      "fieldtype": "Date",
-      "label": "Revision Date"
-     },
-     {
-      "fieldname": "prepared_by",
-      "fieldtype": "Link",
-      "label": "Prepared by",
-      "options": "User"
-     },
-     {
-      "fieldname": "introduction_template",
-      "fieldtype": "Link",
-      "label": "Introduction Template",
-      "options": "Quote Template"
-     },
-     {
-      "fieldname": "executive_summary_section",
-      "fieldtype": "Section Break",
-      "label": "Executive Summary"
-     },
-     {
-      "fieldname": "executive_summary_template",
-      "fieldtype": "Link",
-      "label": "Executive Summary Template",
-      "options": "Quote Template"
-     },
-     {
-      "fieldname": "executive_summary",
-      "fieldtype": "Text Editor",
-      "label": "Executive Summary"
-     },
-     {
-      "fieldname": "module_implementation_section",
-      "fieldtype": "Section Break",
-      "label": "Module Implementation"
-     },
-     {
-      "fieldname": "module_implementation_template",
-      "fieldtype": "Link",
-      "label": "Module Implementation Template",
-      "options": "Quote Template"
-     },
-     {
-      "fieldname": "module_implementation_and_objectives",
-      "fieldtype": "Text Editor",
-      "label": "Module Implementation and Objectives"
-     },
-     {
-      "fieldname": "implementation_charges",
-      "fieldtype": "Table",
-      "label": "Implementation Charges",
-      "options": "Implementation Charges"
-     },
-     {
-      "fieldname": "total_implementation_charges",
-      "fieldtype": "Data",
-      "label": "Total Implementation Charges",
-      "read_only": 1
-     },
-     {
-      "fieldname": "no_of_users",
-      "fieldtype": "Int",
-      "label": "No. Of Users"
-     },
-     {
-      "fieldname": "column_break_evdn",
-      "fieldtype": "Column Break"
-     },
-     {
-      "fieldname": "ram",
-      "fieldtype": "Data",
-      "label": "RAM"
-     },
-     {
-      "fieldname": "ssd_storage",
-      "fieldtype": "Data",
-      "label": "SSD Storage"
-     },
-     {
-      "fieldname": "provider",
-      "fieldtype": "Data",
-      "label": "Provider"
-     },
-     {
-      "fieldname": "cpu",
-      "fieldtype": "Data",
-      "label": "CPU"
-     },
-     {
-      "fieldname": "techinical_support_and_customization_section",
-      "fieldtype": "Section Break",
-      "label": "Techinical Support and Customization"
-     },
-     {
-      "fieldname": "technical_support_and_customization",
-      "fieldtype": "Small Text",
-      "label": "Technical Support and Customization"
-     },
-     {
-      "fieldname": "validity_tsc",
-      "fieldtype": "Data",
-      "label": "Validity"
-     },
-     {
-      "fieldname": "rate_per_hour",
-      "fieldtype": "Currency",
-      "label": "Rate Per Hour"
-     },
-     {
-      "fieldname": "client_specific_needs_section",
-      "fieldtype": "Section Break",
-      "label": "Client Specific Needs"
-     },
-     {
-      "fieldname": "client_need_template",
-      "fieldtype": "Link",
-      "label": "Client Need Template",
-      "options": "Quote Template"
-     },
-     {
-      "fieldname": "add_on_efforts_section",
-      "fieldtype": "Section Break",
-      "label": "Add On Efforts"
-     },
-     {
-      "fieldname": "additional_template",
-      "fieldtype": "Link",
-      "label": "Additional Template",
-      "options": "Add On Effort Template"
-     },
-     {
-      "fieldname": "implementation_charges_section",
-      "fieldtype": "Section Break",
-      "label": "Implementation Charges"
-     },
-     {
-      "fieldname": "master_document",
-      "fieldtype": "Table",
-      "label": "Master Document",
-      "options": "Master Document"
-     },
-     {
-      "fieldname": "client_need",
-      "fieldtype": "Text Editor",
-      "label": "Client Need"
-     },
-     {
-      "fieldname": "additional",
-      "fieldtype": "Text Editor",
-      "label": "Additional"
-     },
-     {
-      "fieldname": "quote_payment_terms_template",
-      "fieldtype": "Link",
-      "label": "Quote Payment Terms Template",
-      "options": "Quote Payment Terms Template"
-     },
-     {
-      "fieldname": "customer_prerequisites_template",
-      "fieldtype": "Link",
-      "label": "Customer Prerequisites Template",
-      "options": "Quote Template"
-     },
-     {
-      "fieldname": "delivery_terms_template",
-      "fieldtype": "Link",
-      "label": "Delivery Terms Template",
-      "options": "Quote Template"
-     },
-     {
-      "fieldname": "quote_payment_terms_template_section",
-      "fieldtype": "Section Break",
-      "label": "Quote Payment Terms Template"
-     },
-     {
-      "fieldname": "customer_prerequisites_template_section",
-      "fieldtype": "Section Break",
-      "label": "Customer Prerequisites Template"
-     },
-     {
-      "fieldname": "delivery_terms_template_section",
-      "fieldtype": "Section Break",
-      "label": "Delivery Terms Template"
-     },
-     {
-      "fieldname": "report_document",
-      "fieldtype": "Table",
-      "label": "Report Document",
-      "options": "Report Document"
-     }
-    ],
-    "links": [],
-    "modified": "2025-02-07 16:55:42.191013",
-    "modified_by": "Administrator",
-    "module": "ERPNext Price Estimation",
-    "name": "ERPNext Price Estimation",
-    "naming_rule": "Expression (old style)",
-    "owner": "Administrator",
-    "permissions": [
-     {
-      "create": 1,
-      "delete": 1,
-      "email": 1,
-      "export": 1,
-      "print": 1,
-      "read": 1,
-      "report": 1,
-      "role": "System Manager",
-      "share": 1,
-      "write": 1
-     }
-    ],
-    "sort_field": "modified",
-    "sort_order": "DESC",
-    "states": [
-     {
-      "color": "Orange",
-      "title": "Open"
-     },
-     {
-      "color": "Cyan",
-      "title": "Estimated"
-     },
-     {
-      "color": "Green",
-      "title": "Converted"
-     },
-     {
-      "color": "Blue",
-      "title": "Handed Over"
-     },
-     {
-      "color": "Gray",
-      "title": "Lost"
-     },
-     {
-      "color": "Gray",
-      "title": "Cancelled"
-     }
-    ],
-    "track_changes": 1
-   }
+ "actions": [],
+ "autoname": "PRM-EST-.#####",
+ "creation": "2024-05-14 12:48:08.989509",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "customer",
+  "customer_name",
+  "opportunity_from",
+  "customer_company",
+  "company_location",
+  "validity_ds",
+  "column_break_28_column",
+  "company",
+  "domain",
+  "status",
+  "party",
+  "revison_no",
+  "revision_date",
+  "prepared_by",
+  "introduction_section_section",
+  "introduction_template",
+  "introduction",
+  "executive_summary_section",
+  "executive_summary_template",
+  "executive_summary",
+  "module_implementation_section",
+  "module_implementation_template",
+  "module_implementation_and_objectives",
+  "customer_details",
+  "project_and_account_brief",
+  "qualification_details_section",
+  "current_state",
+  "pain_point",
+  "column_break_qual",
+  "impact",
+  "discovery_details_section",
+  "discovery_call_notes",
+  "pick_modules_section",
+  "accounts",
+  "payroll",
+  "manufacturing",
+  "education",
+  "column_break_8",
+  "buying",
+  "selling",
+  "setup",
+  "column_break_10",
+  "stock",
+  "hrms",
+  "customization",
+  "column_break_12",
+  "crm",
+  "projects",
+  "healthcare",
+  "accounts_module_section",
+  "accounts_details",
+  "master_document",
+  "report_document",
+  "buying_section",
+  "buying_details",
+  "stock_section",
+  "stock_details",
+  "crm_section",
+  "crm_details",
+  "payroll_section",
+  "payroll_details",
+  "selling_section",
+  "selling_details",
+  "hrms_section",
+  "hrms_details",
+  "projects_section",
+  "projects_details",
+  "manufacturing_section_section",
+  "manufacturing_details",
+  "setup_section_section",
+  "setup_details",
+  "customizations_section",
+  "customization_details",
+  "healthcare_section",
+  "healthcare_details",
+  "education_section",
+  "education_details",
+  "total_hours_section",
+  "currency",
+  "total_config_effort",
+  "total_hourly_rate",
+  "column_break_25",
+  "total_other_effort",
+  "total_efforts",
+  "total_amount",
+  "frappe_cloud_details",
+  "frappe_cloud_plan",
+  "column_break_26",
+  "validity",
+  "rate",
+  "column_break_27",
+  "uom",
+  "amount",
+  "column_break_evdn",
+  "ram",
+  "cpu",
+  "ssd_storage",
+  "provider",
+  "amc_details",
+  "amc",
+  "column_break_28",
+  "amc_validity",
+  "amc_rate",
+  "column_break_29",
+  "amc_uom",
+  "amc_amount",
+  "no_of_users",
+  "implementation_charges_section",
+  "implementation_charges",
+  "total_implementation_charges",
+  "techinical_support_and_customization_section",
+  "technical_support_and_customization",
+  "validity_tsc",
+  "rate_per_hour",
+  "client_specific_needs_section",
+  "client_need_template",
+  "client_need",
+  "add_on_efforts_section",
+  "additional_template",
+  "additional",
+  "quote_payment_terms_template_section",
+  "quote_payment_terms_template",
+  "customer_prerequisites_template_section",
+  "customer_prerequisites_template",
+  "delivery_terms_template_section",
+  "delivery_terms_template",
+  "service_coverage_section",
+  "service_coverage_defination_template",
+  "general_terms_and_understandings_section",
+  "general_terms_template",
+  "general_terms_and_understanding",
+  "agreement_section",
+  "agreement_template",
+  "agreement",
+  "core_values_section",
+  "core_values_template",
+  "core_values",
+  "erp_support_services_benifits_section",
+  "erp_support_services_benifits_template",
+  "erp_support_services_benifits",
+  "cloud_server_benifits_section",
+  "cloud_server_benifits_template",
+  "cloud_server_benifits",
+  "thanks_section_section",
+  "thanks"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_28_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "domain",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Domain",
+   "options": "Manufacturing\nServices\nDistribution\nHealthcare\nEducation\nRetail"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nEstimated\nConverted\nHanded Over\nLost\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_details",
+   "fieldtype": "Section Break",
+   "label": "Company Details"
+  },
+  {
+   "fieldname": "project_and_account_brief",
+   "fieldtype": "Text Editor",
+   "label": "Project and Account Brief"
+  },
+  {
+   "depends_on": "eval:doc.lead_qualification",
+   "fieldname": "qualification_details_section",
+   "fieldtype": "Section Break",
+   "label": "Qualification Details"
+  },
+  {
+   "fetch_from": "lead_qualification.current_state",
+   "fieldname": "current_state",
+   "fieldtype": "Text",
+   "label": "Current State",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "lead_qualification.pain_point",
+   "fieldname": "pain_point",
+   "fieldtype": "Text",
+   "label": "Pain Point",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qual",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "lead_qualification.impact",
+   "fetch_if_empty": 1,
+   "fieldname": "impact",
+   "fieldtype": "Text",
+   "label": "Impact",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.lead_qualification",
+   "fieldname": "discovery_details_section",
+   "fieldtype": "Section Break",
+   "label": "Discovery Details"
+  },
+  {
+   "fetch_from": "lead_qualification.discovery_call_notes",
+   "fieldname": "discovery_call_notes",
+   "fieldtype": "Text Editor",
+   "label": "Discovery Call Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pick_modules_section",
+   "fieldtype": "Section Break",
+   "label": "Pick Modules"
+  },
+  {
+   "default": "0",
+   "fieldname": "accounts",
+   "fieldtype": "Check",
+   "label": "Accounts"
+  },
+  {
+   "default": "0",
+   "fieldname": "payroll",
+   "fieldtype": "Check",
+   "label": "Payroll"
+  },
+  {
+   "default": "0",
+   "fieldname": "manufacturing",
+   "fieldtype": "Check",
+   "label": "Manufacturing"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "buying",
+   "fieldtype": "Check",
+   "label": "Buying"
+  },
+  {
+   "default": "0",
+   "fieldname": "selling",
+   "fieldtype": "Check",
+   "label": "Selling"
+  },
+  {
+   "default": "0",
+   "fieldname": "setup",
+   "fieldtype": "Check",
+   "label": "Setup"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "stock",
+   "fieldtype": "Check",
+   "label": "Stock"
+  },
+  {
+   "default": "0",
+   "fieldname": "hrms",
+   "fieldtype": "Check",
+   "label": "HRMS"
+  },
+  {
+   "default": "0",
+   "fieldname": "customization",
+   "fieldtype": "Check",
+   "label": "Customization"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break",
+   "hide_border": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "crm",
+   "fieldtype": "Check",
+   "label": "CRM"
+  },
+  {
+   "default": "0",
+   "fieldname": "projects",
+   "fieldtype": "Check",
+   "label": "Projects"
+  },
+  {
+   "depends_on": "eval:doc.accounts",
+   "fieldname": "accounts_module_section",
+   "fieldtype": "Section Break",
+   "label": "Accounts"
+  },
+  {
+   "depends_on": "eval:doc.buying",
+   "fieldname": "buying_section",
+   "fieldtype": "Section Break",
+   "label": "Buying"
+  },
+  {
+   "depends_on": "eval:doc.stock",
+   "fieldname": "stock_section",
+   "fieldtype": "Section Break",
+   "label": "Stock"
+  },
+  {
+   "depends_on": "eval:doc.crm",
+   "fieldname": "crm_section",
+   "fieldtype": "Section Break",
+   "label": "CRM"
+  },
+  {
+   "depends_on": "eval:doc.payroll",
+   "fieldname": "payroll_section",
+   "fieldtype": "Section Break",
+   "label": "Payroll"
+  },
+  {
+   "depends_on": "eval:doc.selling",
+   "fieldname": "selling_section",
+   "fieldtype": "Section Break",
+   "label": "Selling"
+  },
+  {
+   "depends_on": "eval:doc.hrms",
+   "fieldname": "hrms_section",
+   "fieldtype": "Section Break",
+   "label": "HRMS"
+  },
+  {
+   "depends_on": "eval:doc.projects",
+   "fieldname": "projects_section",
+   "fieldtype": "Section Break",
+   "label": "Projects"
+  },
+  {
+   "depends_on": "eval:doc.manufacturing",
+   "fieldname": "manufacturing_section_section",
+   "fieldtype": "Section Break",
+   "label": "Manufacturing Section"
+  },
+  {
+   "depends_on": "eval:doc.setup",
+   "fieldname": "setup_section_section",
+   "fieldtype": "Section Break",
+   "label": "Setup Section"
+  },
+  {
+   "depends_on": "eval:doc.customization",
+   "fieldname": "customizations_section",
+   "fieldtype": "Section Break",
+   "label": "Customizations"
+  },
+  {
+   "fieldname": "total_hours_section",
+   "fieldtype": "Section Break",
+   "label": "Total Implementation Hours"
+  },
+  {
+   "fieldname": "total_config_effort",
+   "fieldtype": "Float",
+   "label": "Total Configuration Efforts"
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_other_effort",
+   "fieldtype": "Float",
+   "label": "Total Other Efforts"
+  },
+  {
+   "fieldname": "total_efforts",
+   "fieldtype": "Float",
+   "label": "Total Efforts"
+  },
+  {
+   "fetch_from": "partner_lead.lead_name",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "healthcare",
+   "fieldtype": "Check",
+   "label": "Healthcare"
+  },
+  {
+   "default": "0",
+   "fieldname": "education",
+   "fieldtype": "Check",
+   "label": "Education"
+  },
+  {
+   "depends_on": "eval:doc.healthcare",
+   "fieldname": "healthcare_section",
+   "fieldtype": "Section Break",
+   "label": "Healthcare"
+  },
+  {
+   "depends_on": "eval:doc.education",
+   "fieldname": "education_section",
+   "fieldtype": "Section Break",
+   "label": "Education"
+  },
+  {
+   "fieldname": "total_hourly_rate",
+   "fieldtype": "Float",
+   "label": "Total Hourly Rate"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "options": "currency"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "frappe_cloud_details",
+   "fieldtype": "Section Break",
+   "label": "Frappe Cloud Details"
+  },
+  {
+   "fieldname": "amc_details",
+   "fieldtype": "Section Break",
+   "label": "AMC Details"
+  },
+  {
+   "fieldname": "frappe_cloud_plan",
+   "fieldtype": "Small Text",
+   "label": "Frappe Cloud Plan"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "validity",
+   "fieldtype": "Float",
+   "label": "Validity"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Select",
+   "label": "UOM",
+   "options": "Month\nYear"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "AMC",
+   "fieldname": "amc",
+   "fieldtype": "Small Text",
+   "label": "AMC"
+  },
+  {
+   "fieldname": "amc_validity",
+   "fieldtype": "Float",
+   "label": "Validity"
+  },
+  {
+   "fieldname": "amc_rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "options": "currency"
+  },
+  {
+   "fieldname": "amc_uom",
+   "fieldtype": "Select",
+   "label": "UOM",
+   "options": "Month\nYear"
+  },
+  {
+   "fieldname": "amc_amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "introduction",
+   "fieldtype": "Text Editor",
+   "label": "Introduction Section"
+  },
+  {
+   "fieldname": "introduction_section_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "thanks_section_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "thanks",
+   "fieldtype": "Text Editor",
+   "label": "End Section"
+  },
+  {
+   "fieldname": "accounts_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "buying_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "stock_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "crm_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "payroll_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "selling_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "hrms_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "projects_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "manufacturing_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "setup_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "healthcare_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "education_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "customization_details",
+   "fieldtype": "Table",
+   "label": "Estimation Details",
+   "options": "Estimation Detail"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "opportunity_from",
+   "fieldtype": "Link",
+   "label": "Opportunity From",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "label": "Party",
+   "options": "opportunity_from"
+  },
+  {
+   "fieldname": "customer_company",
+   "fieldtype": "Data",
+   "label": "Customer Company"
+  },
+  {
+   "fieldname": "company_location",
+   "fieldtype": "Data",
+   "label": "Company Location"
+  },
+  {
+   "fieldname": "validity_ds",
+   "fieldtype": "Int",
+   "label": "Validity"
+  },
+  {
+   "fieldname": "revison_no",
+   "fieldtype": "Data",
+   "label": "Revison No."
+  },
+  {
+   "fieldname": "revision_date",
+   "fieldtype": "Date",
+   "label": "Revision Date"
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Prepared by",
+   "options": "User"
+  },
+  {
+   "fieldname": "introduction_template",
+   "fieldtype": "Link",
+   "label": "Introduction Template",
+   "options": "Quote Template"
+  },
+  {
+   "fieldname": "executive_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Executive Summary"
+  },
+  {
+   "fieldname": "executive_summary_template",
+   "fieldtype": "Link",
+   "label": "Executive Summary Template",
+   "options": "Quote Template"
+  },
+  {
+   "fieldname": "executive_summary",
+   "fieldtype": "Text Editor",
+   "label": "Executive Summary"
+  },
+  {
+   "fieldname": "module_implementation_section",
+   "fieldtype": "Section Break",
+   "label": "Module Implementation"
+  },
+  {
+   "fieldname": "module_implementation_template",
+   "fieldtype": "Link",
+   "label": "Module Implementation Template",
+   "options": "Quote Template"
+  },
+  {
+   "fieldname": "module_implementation_and_objectives",
+   "fieldtype": "Text Editor",
+   "label": "Module Implementation and Objectives"
+  },
+  {
+   "fieldname": "implementation_charges",
+   "fieldtype": "Table",
+   "label": "Implementation Charges",
+   "options": "Implementation Charges"
+  },
+  {
+   "fieldname": "total_implementation_charges",
+   "fieldtype": "Data",
+   "label": "Total Implementation Charges",
+   "read_only": 1
+  },
+  {
+   "fieldname": "no_of_users",
+   "fieldtype": "Int",
+   "label": "No. Of Users"
+  },
+  {
+   "fieldname": "column_break_evdn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ram",
+   "fieldtype": "Data",
+   "label": "RAM"
+  },
+  {
+   "fieldname": "ssd_storage",
+   "fieldtype": "Data",
+   "label": "SSD Storage"
+  },
+  {
+   "fieldname": "provider",
+   "fieldtype": "Data",
+   "label": "Provider"
+  },
+  {
+   "fieldname": "cpu",
+   "fieldtype": "Data",
+   "label": "CPU"
+  },
+  {
+   "fieldname": "techinical_support_and_customization_section",
+   "fieldtype": "Section Break",
+   "label": "Techinical Support and Customization"
+  },
+  {
+   "fieldname": "technical_support_and_customization",
+   "fieldtype": "Small Text",
+   "label": "Technical Support and Customization"
+  },
+  {
+   "fieldname": "validity_tsc",
+   "fieldtype": "Data",
+   "label": "Validity"
+  },
+  {
+   "fieldname": "rate_per_hour",
+   "fieldtype": "Currency",
+   "label": "Rate Per Hour"
+  },
+  {
+   "fieldname": "client_specific_needs_section",
+   "fieldtype": "Section Break",
+   "label": "Client Specific Needs"
+  },
+  {
+   "fieldname": "client_need_template",
+   "fieldtype": "Link",
+   "label": "Client Need Template",
+   "options": "Quote Template"
+  },
+  {
+   "fieldname": "add_on_efforts_section",
+   "fieldtype": "Section Break",
+   "label": "Add On Efforts"
+  },
+  {
+   "fieldname": "additional_template",
+   "fieldtype": "Link",
+   "label": "Additional Template",
+   "options": "Add On Effort Template"
+  },
+  {
+   "fieldname": "implementation_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Implementation Charges"
+  },
+  {
+   "fieldname": "master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "client_need",
+   "fieldtype": "Text Editor",
+   "label": "Client Need"
+  },
+  {
+   "fieldname": "additional",
+   "fieldtype": "Text Editor",
+   "label": "Additional"
+  },
+  {
+   "fieldname": "quote_payment_terms_template",
+   "fieldtype": "Link",
+   "label": "Quote Payment Terms Template",
+   "options": "Quote Payment Terms Template"
+  },
+  {
+   "fieldname": "customer_prerequisites_template",
+   "fieldtype": "Link",
+   "label": "Customer Prerequisites Template",
+   "options": "Quote Template"
+  },
+  {
+   "fieldname": "delivery_terms_template",
+   "fieldtype": "Link",
+   "label": "Delivery Terms Template",
+   "options": "Quote Template"
+  },
+  {
+   "fieldname": "quote_payment_terms_template_section",
+   "fieldtype": "Section Break",
+   "label": "Quote Payment Terms Template"
+  },
+  {
+   "fieldname": "customer_prerequisites_template_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Prerequisites Template"
+  },
+  {
+   "fieldname": "delivery_terms_template_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Terms Template"
+  },
+  {
+   "fieldname": "report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "service_coverage_section",
+   "fieldtype": "Section Break",
+   "label": "Service Coverage"
+  },
+  {
+   "fieldname": "service_coverage_defination_template",
+   "fieldtype": "Link",
+   "label": "Service Coverage Defination Template",
+   "options": "Service Coverage Template"
+  },
+  {
+   "fieldname": "general_terms_and_understandings_section",
+   "fieldtype": "Section Break",
+   "label": "General Terms and Understandings"
+  },
+  {
+   "fieldname": "general_terms_template",
+   "fieldtype": "Link",
+   "label": "General Terms Template",
+   "options": "Quote Template"
+  },
+  {
+   "fieldname": "general_terms_and_understanding",
+   "fieldtype": "Text Editor",
+   "label": "General Terms and Understanding"
+  },
+  {
+   "fieldname": "agreement_section",
+   "fieldtype": "Section Break",
+   "label": "Agreement"
+  },
+  {
+   "fieldname": "agreement_template",
+   "fieldtype": "Link",
+   "label": "Agreement Template",
+   "options": "Quote Template"
+  },
+  {
+   "fieldname": "agreement",
+   "fieldtype": "Text Editor",
+   "label": "Agreement"
+  },
+  {
+   "fieldname": "core_values_section",
+   "fieldtype": "Section Break",
+   "label": "Core Values"
+  },
+  {
+   "fieldname": "core_values_template",
+   "fieldtype": "Link",
+   "label": "Core Values Template",
+   "options": "Quote Template"
+  },
+  {
+   "fieldname": "core_values",
+   "fieldtype": "Text Editor",
+   "label": "Core Values"
+  },
+  {
+   "fieldname": "erp_support_services_benifits_section",
+   "fieldtype": "Section Break",
+   "label": "ERP Support Services Benifits"
+  },
+  {
+   "fieldname": "erp_support_services_benifits_template",
+   "fieldtype": "Link",
+   "label": "ERP Support Services Benifits Template",
+   "options": "Quote Template"
+  },
+  {
+   "fieldname": "erp_support_services_benifits",
+   "fieldtype": "Text Editor",
+   "label": "ERP Support Services Benifits"
+  },
+  {
+   "fieldname": "cloud_server_benifits_section",
+   "fieldtype": "Section Break",
+   "label": "Cloud Server Benifits"
+  },
+  {
+   "fieldname": "cloud_server_benifits",
+   "fieldtype": "Text Editor",
+   "label": "Cloud Server Benifits"
+  },
+  {
+   "fieldname": "cloud_server_benifits_template",
+   "fieldtype": "Link",
+   "label": "Cloud Server Benifits Template",
+   "options": "Quote Template"
+  }
+ ],
+ "links": [],
+ "modified": "2025-02-11 17:17:59.347501",
+ "modified_by": "Administrator",
+ "module": "ERPNext Price Estimation",
+ "name": "ERPNext Price Estimation",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Open"
+  },
+  {
+   "color": "Cyan",
+   "title": "Estimated"
+  },
+  {
+   "color": "Green",
+   "title": "Converted"
+  },
+  {
+   "color": "Blue",
+   "title": "Handed Over"
+  },
+  {
+   "color": "Gray",
+   "title": "Lost"
+  },
+  {
+   "color": "Gray",
+   "title": "Cancelled"
+  }
+ ],
+ "track_changes": 1
+}

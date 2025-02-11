@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-11 12:25:00.030282",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "defination",
+  "response_and_resolution",
+  "service_charge_defination",
+  "service_coverage_response_and_resolution"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "defination",
+   "fieldtype": "Check",
+   "label": "Defination"
+  },
+  {
+   "default": "0",
+   "fieldname": "response_and_resolution",
+   "fieldtype": "Check",
+   "label": "Response and Resolution"
+  },
+  {
+   "fieldname": "service_charge_defination",
+   "fieldtype": "Table",
+   "label": "Service Charge Defination",
+   "options": "Service Coverage Defination"
+  },
+  {
+   "fieldname": "service_coverage_response_and_resolution",
+   "fieldtype": "Table",
+   "label": "Service Coverage Response and Resolution",
+   "options": "Service Coverage Response and Resolution"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-11 15:29:29.769608",
+ "modified_by": "Administrator",
+ "module": "ERPNext Price Estimation",
+ "name": "Service Coverage Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

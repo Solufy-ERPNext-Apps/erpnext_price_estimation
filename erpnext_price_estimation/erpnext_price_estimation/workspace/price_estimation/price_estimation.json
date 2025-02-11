@@ -13,11 +13,15 @@
  "is_hidden": 0,
  "label": "price estimation",
  "links": [],
- "modified": "2025-02-10 19:21:59.910459",
+ "modified": "2025-02-11 18:09:13.129757",
  "modified_by": "Administrator",
  "module": "ERPNext Price Estimation",
  "name": "price estimation",
- "number_cards": [],
+ "number_cards": [
+  {
+   "number_card_name": "ERPNext Price Estimation"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
