@@ -58,32 +58,69 @@
   "healthcare",
   "accounts_module_section",
   "accounts_details",
-  "master_document",
-  "report_document",
+  "column_break_nqgo",
+  "accounts_master_document",
+  "accounts_report_document",
   "buying_section",
   "buying_details",
+  "column_break_azvo",
+  "buying_master_document",
+  "buying_report_document",
   "stock_section",
   "stock_details",
+  "column_break_9o3w",
+  "stock_master_document",
+  "stock_report_document",
   "crm_section",
   "crm_details",
+  "column_break_0imw",
+  "crm_master_document",
+  "crm_report_document",
   "payroll_section",
   "payroll_details",
+  "column_break_b4ij",
+  "payroll_master_document",
+  "payroll_report_document",
   "selling_section",
   "selling_details",
+  "column_break_3czh",
+  "selling_master_document",
+  "selling_report_document",
   "hrms_section",
   "hrms_details",
+  "column_break_wlay",
+  "hrms_master_document",
+  "hrms_report_document",
   "projects_section",
   "projects_details",
+  "column_break_2euy",
+  "projects_master_document",
+  "projects_report_document",
   "manufacturing_section_section",
   "manufacturing_details",
+  "column_break_iwpe",
+  "manufacturing_master_document",
+  "manufacturing_report_document",
   "setup_section_section",
   "setup_details",
+  "column_break_xlkm",
+  "setup_master_document",
+  "setup_report_document",
   "customizations_section",
   "customization_details",
+  "column_break_mbzd",
+  "customization_master_document",
+  "customization_report_document",
   "healthcare_section",
   "healthcare_details",
+  "column_break_ap4n",
+  "healthcare_master_document",
+  "healthcare_report_document",
   "education_section",
   "education_details",
+  "column_break_tkou",
+  "education_master_document",
+  "education_report_document",
   "total_hours_section",
   "currency",
   "total_config_effort",
@@ -819,12 +856,6 @@
    "label": "Implementation Charges"
   },
   {
-   "fieldname": "master_document",
-   "fieldtype": "Table",
-   "label": "Master Document",
-   "options": "Master Document"
-  },
-  {
    "fieldname": "client_need",
    "fieldtype": "Text Editor",
    "label": "Client Need"
@@ -866,12 +897,6 @@
    "fieldname": "delivery_terms_template_section",
    "fieldtype": "Section Break",
    "label": "Delivery Terms Template"
-  },
-  {
-   "fieldname": "report_document",
-   "fieldtype": "Table",
-   "label": "Report Document",
-   "options": "Report Document"
   },
   {
    "fieldname": "service_coverage_section",
@@ -963,10 +988,218 @@
    "fieldtype": "Link",
    "label": "Cloud Server Benifits Template",
    "options": "Quote Template"
+  },
+  {
+   "fieldname": "column_break_nqgo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "accounts_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "accounts_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "buying_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "column_break_azvo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "buying_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_9o3w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stock_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "stock_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_0imw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crm_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "crm_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_b4ij",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payroll_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "payroll_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_3czh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "selling_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "selling_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_wlay",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hrms_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "hrms_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_2euy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "projects_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "projects_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_iwpe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "manufacturing_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "manufacturing_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_xlkm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "setup_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "setup_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_mbzd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customization_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "customization_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_ap4n",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "healthcare_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "healthcare_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "column_break_tkou",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "education_master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
+  },
+  {
+   "fieldname": "education_report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
   }
  ],
  "links": [],
- "modified": "2025-02-11 17:17:59.347501",
+ "modified": "2025-02-18 22:51:28.252423",
  "modified_by": "Administrator",
  "module": "ERPNext Price Estimation",
  "name": "ERPNext Price Estimation",

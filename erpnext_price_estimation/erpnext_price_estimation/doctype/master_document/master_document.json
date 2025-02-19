@@ -12,6 +12,8 @@
   {
    "fieldname": "document",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Document",
    "options": "DocType"
   }
@@ -19,7 +21,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-10 12:19:32.991727",
+ "modified": "2025-02-18 12:37:38.767608",
  "modified_by": "Administrator",
  "module": "ERPNext Price Estimation",
  "name": "Master Document",

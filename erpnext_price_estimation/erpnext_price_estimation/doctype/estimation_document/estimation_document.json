@@ -12,7 +12,9 @@
   "configuration_effort",
   "column_break_4",
   "module",
-  "other_effort"
+  "other_effort",
+  "master_document",
+  "report_document"
  ],
  "fields": [
   {
@@ -52,14 +54,27 @@
    "fieldname": "other_effort",
    "fieldtype": "Float",
    "label": "Other Effort"
+  },
+  {
+   "fieldname": "report_document",
+   "fieldtype": "Table",
+   "label": "Report Document",
+   "options": "Report Document"
+  },
+  {
+   "fieldname": "master_document",
+   "fieldtype": "Table",
+   "label": "Master Document",
+   "options": "Master Document"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-07 18:10:18.985003",
+ "modified": "2025-02-18 12:32:55.746094",
  "modified_by": "Administrator",
  "module": "ERPNext Price Estimation",
  "name": "Estimation Document",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
