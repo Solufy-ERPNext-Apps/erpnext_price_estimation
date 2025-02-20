@@ -38,4 +38,7 @@ class QuoteTemplate(Document):
 			self.name = "agreement"
 
 		if self.core_values == True:
-			self.name = "core_values"	
+			self.name = "core_values"
+
+
+

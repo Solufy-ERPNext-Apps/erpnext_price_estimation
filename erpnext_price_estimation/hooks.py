@@ -10,3 +10,8 @@ fixtures = [
     "Estimation Document",
     "Module"
 ]
+# doc_events = {
+#     "ERPNext Price Estimation": {
+#         "before_save": "erpnext_price_estimation.erpnext_price_estimation.doctype.erpnext_price_estimation.erpnext_price_estimation.before_save"
+#     }
+# }

@@ -375,6 +375,25 @@ function setTemplateQuery(frm, fieldname, filters) {
     });
 }
 
+// function setTemplateValue(frm, linkField, targetField) {
+//     if (frm.doc[linkField]) {
+//         frappe.call({
+//             method: 'frappe.client.get',
+//             args: {
+//                 doctype: 'Quote Template',
+//                 name: frm.doc[linkField]
+//             },
+//             callback: function (response) {
+//                 if (response.message) {
+//                     frm.set_value(targetField, response.message.terms);
+//                 }
+//             }
+//         });
+//     }
+// }
+
+
+
 function setTemplateValue(frm, linkField, targetField) {
     if (frm.doc[linkField]) {
         frappe.call({
@@ -385,12 +404,25 @@ function setTemplateValue(frm, linkField, targetField) {
             },
             callback: function (response) {
                 if (response.message) {
-                    frm.set_value(targetField, response.message.terms);
+                    frappe.call({
+                        method: 'erpnext_price_estimation.erpnext_price_estimation.doctype.erpnext_price_estimation.erpnext_price_estimation.render_template',
+                        args: {
+                            template_name: frm.doc[linkField],  
+                            doc: frm.doc
+                        },
+                        callback: function (rendered) {
+                            if (rendered.message) {
+                                frm.set_value(targetField, rendered.message);
+                            }
+                        }
+                    });
                 }
             }
         });
     }
 }
+
+
 
 frappe.ui.form.on('ERPNext Price Estimation', {
     validate: function (frm) {
@@ -414,3 +446,21 @@ function calculate_total_implementation_charges(frm) {
 
     frm.set_value('total_implementation_charges', total);
 };
+
+// frappe.ui.form.on("ERPNext Price Estimation", {
+//     executive_summary_template: function(frm) {
+//         if (frm.doc.executive_summary_template) {
+//             frappe.call({
+//                 method: "erpnext_price_estimation.erpnext_price_estimation.doctype.erpnext_price_estimation.erpnext_price_estimation.render_executive_summary",
+//                 args: {
+//                     doc: frm.doc
+//                 },
+//                 callback: function(response) {
+//                     if (response.message) {
+//                         frm.set_value("executive_summary", response.message);
+//                     }
+//                 }
+//             });
+//         }
+//     }
+// });

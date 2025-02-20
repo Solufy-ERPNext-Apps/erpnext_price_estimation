@@ -79,3 +79,5 @@ function handle_checkbox_toggle(frm) {
         frm.refresh_field(fieldname);
     });
 }
+
+
